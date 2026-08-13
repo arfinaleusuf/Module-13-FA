@@ -1,1 +1,10 @@
 pip freeze > requirements.txt (banan same rakha lagbe)
+
+
+deploy step:
+    1. requirements.txt file genarate korechi. oikhane amader ja lagbe ei file ta run korte ta likhechi
+    2. data base e sqlite add korechi 
+    3. github e uplode
+    4. rander:
+        1. web service.
+        2. start command : uvicorn main:app --host 0.0.0.0 --port 1000
