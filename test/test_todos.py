@@ -41,6 +41,12 @@ def test_read_specific_todos():
     assert respons.status_code == status.HTTP_200_OK
 
 def test_create_todos():
+    db = SessionLocal()
+    
+    # remove old test data if its exist
+    db.query(Todos).filter(Todos.id == 0).delete()
+    db.commit()
+
     request_data = {
         "id" : 0,
         "title" : "string",
@@ -50,3 +56,4 @@ def test_create_todos():
     }
     respons = client.post('/create/', json=request_data)
     assert respons.status_code == status.HTTP_201_CREATED
+    assert respons.json() == {'message' : 'To do created successfully'}
