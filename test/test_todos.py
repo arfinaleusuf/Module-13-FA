@@ -14,6 +14,9 @@ def override_get_current_user():
 def test_todo():
     db = SessionLocal()
 
+    # remove old test data if its exist
+    db.query(Todos).filter(Todos.id == 99).delete()
+
     todo = Todos(
         id = 99,
         title ='Testing',
