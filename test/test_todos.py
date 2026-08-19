@@ -23,6 +23,9 @@ def test_todo():
         owner_id = 1
     )
 
+    db.add(todo)
+    db.commit()
+
 
 app.dependency_overrides[get_current_user] = override_get_current_user
 
