@@ -15,7 +15,7 @@ def test_todo():
     db = SessionLocal()
 
     todo = Todos(
-        id = 101,
+        id = 99,
         title ='Testing',
         description = 'Testing',
         priority = 5,
@@ -34,5 +34,5 @@ def test_read_todos():
     assert respons.status_code == status.HTTP_200_OK
 
 def test_read_specific_todos():
-    respons = client.get('/todo/{todo_id}')
+    respons = client.get('/todo/99')
     assert respons.status_code == status.HTTP_200_OK
