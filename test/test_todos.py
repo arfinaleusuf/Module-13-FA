@@ -46,7 +46,7 @@ def test_read_specific_todos():
         "title" : "string",
         "description" : "string",
         "priority" : 1,
-        "completed" : "true"
+        "completed" : True
     }
     respons = client.post('/create/', json=request_data)
     assert respons.status_code == status.HTTP_201_CREATED
