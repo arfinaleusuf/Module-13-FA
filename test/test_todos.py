@@ -65,3 +65,8 @@ def test_update_todos():
     respons = client.put('/edit/99', json=request_data)
     assert respons.status_code == status.HTTP_200_OK
     assert respons.json() == {'messege': 'To do updated sucessfully'}
+
+def test_delete_todos():
+    respons = client.delete('/delete/99')
+    assert respons.status_code == status.HTTP_200_OK
+    assert respons.json() == {'messege': 'To do deleted sucessfully'}
