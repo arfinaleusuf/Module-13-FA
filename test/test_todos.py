@@ -39,3 +39,14 @@ def test_read_todos():
 def test_read_specific_todos():
     respons = client.get('/todo/99')
     assert respons.status_code == status.HTTP_200_OK
+
+def test_read_specific_todos():
+    request_data = {
+        "id" : 0,
+        "title" : "string",
+        "description" : "string",
+        "priority" : 1,
+        "completed" : "true"
+    }
+    respons = client.post('/create/', json=request_data)
+    assert respons.status_code == status.HTTP_201_CREATED
