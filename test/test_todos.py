@@ -40,7 +40,7 @@ def test_read_specific_todos():
     respons = client.get('/todo/99')
     assert respons.status_code == status.HTTP_200_OK
 
-def test_read_specific_todos():
+def test_create_todos():
     request_data = {
         "id" : 0,
         "title" : "string",
