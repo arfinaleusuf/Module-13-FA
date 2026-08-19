@@ -13,5 +13,5 @@ app.dependency_overrides[get_current_user] = override_get_current_user
 
 def test_read_todos():
     respons = client.get('/')
-    assert respons.status_code == status.HTTP_401_UNAUTHORIZED
+    assert respons.status_code == status.HTTP_200_OK
     
