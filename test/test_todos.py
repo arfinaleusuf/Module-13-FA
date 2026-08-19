@@ -57,3 +57,11 @@ def test_create_todos():
     respons = client.post('/create/', json=request_data)
     assert respons.status_code == status.HTTP_201_CREATED
     assert respons.json() == {'message' : 'To do created successfully'}
+    
+def test_update_todos():
+    request_data = {
+        "title" : "updated"
+    }
+    respons = client.put('/edit/99', json=request_data)
+    assert respons.status_code == status.HTTP_200_OK
+    assert respons.json() == {'messege': 'To do updated sucessfully'}
